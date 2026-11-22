@@ -1,4 +1,6 @@
-export const GITHUB_REPO_PLACEHOLDER = '[GITHUB_REPO_URL]';
+export const GITHUB_REPO_URL = 'https://github.com/Giri-Nova/demand-forecasting-toolkit';
+export const GITHUB_ZIP_URL =
+  'https://github.com/Giri-Nova/demand-forecasting-toolkit/archive/refs/heads/main.zip';
 
 export const QUICK_START_HERO_CMD =
   'python -m src.train --data my_sales.csv --date-col order_date --target-col demand';

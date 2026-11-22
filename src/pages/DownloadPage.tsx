@@ -1,13 +1,9 @@
-import { Check, ExternalLink, Github } from 'lucide-react';
+import { Check, Download, ExternalLink, Github } from 'lucide-react';
 import { CodeBlock } from '../components/CodeBlock';
 import { MotionCard } from '../components/MotionCard';
-import { GITHUB_REPO_PLACEHOLDER } from '../data/toolkitData';
+import { GITHUB_REPO_URL, GITHUB_ZIP_URL } from '../data/toolkitData';
 
-interface DownloadPageProps {
-  onOpenRepoModal: () => void;
-}
-
-export function DownloadPage({ onOpenRepoModal }: DownloadPageProps) {
+export function DownloadPage() {
   return (
     <div className="bg-[#F8FAFB] py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -44,25 +40,43 @@ export function DownloadPage({ onOpenRepoModal }: DownloadPageProps) {
               <ul className="mt-5 space-y-2 border-t border-neutral-200 pt-4 text-xs text-neutral-600">
                 <li className="flex items-center gap-2">
                   <Check className="h-3.5 w-3.5 text-teal-600" aria-hidden="true" />
-                  <span>Open-source license (MIT placeholder)</span>
+                  <span>Open-source repository on GitHub</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="h-3.5 w-3.5 text-teal-600" aria-hidden="true" />
-                  <span>Repository URL: {GITHUB_REPO_PLACEHOLDER}</span>
+                  <a
+                    href={GITHUB_REPO_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="truncate underline decoration-neutral-300 underline-offset-4 hover:text-teal-700"
+                  >
+                    {GITHUB_REPO_URL}
+                  </a>
                 </li>
               </ul>
             </MotionCard>
 
-            <div className="pt-2">
-              <button
-                type="button"
-                onClick={onOpenRepoModal}
-                className="inline-flex min-h-[46px] items-center gap-2.5 rounded-xl bg-teal-700 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 whitespace-nowrap shrink-0"
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <a
+                href={GITHUB_REPO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[46px] items-center gap-2.5 rounded-xl bg-teal-700 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 whitespace-nowrap shrink-0"
               >
                 <Github className="h-4 w-4" aria-hidden="true" />
-                <span>View on GitHub / Download source (ZIP)</span>
+                <span>View on GitHub</span>
                 <ExternalLink className="h-3.5 w-3.5 opacity-80" aria-hidden="true" />
-              </button>
+              </a>
+
+              <a
+                href={GITHUB_ZIP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[46px] items-center gap-2 rounded-xl border border-neutral-300 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-900 transition-colors hover:border-neutral-950 hover:bg-neutral-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 whitespace-nowrap shrink-0"
+              >
+                <Download className="h-4 w-4" aria-hidden="true" />
+                <span>Download source (ZIP)</span>
+              </a>
             </div>
           </div>
 
@@ -73,15 +87,14 @@ export function DownloadPage({ onOpenRepoModal }: DownloadPageProps) {
                 1. Clone repository
               </h2>
               <p className="mt-2 text-sm text-neutral-600 sm:text-base">
-                Once the repository link is published, clone the toolkit directly into a local
-                working directory.
+                Clone the toolkit directly into a local working directory and install dependencies.
               </p>
               <div className="mt-5">
                 <CodeBlock
                   label="git clone"
                   language="bash"
                   buttonText="Copy command"
-                  code={`git clone ${GITHUB_REPO_PLACEHOLDER}`}
+                  code={`git clone ${GITHUB_REPO_URL}.git`}
                 />
               </div>
             </MotionCard>

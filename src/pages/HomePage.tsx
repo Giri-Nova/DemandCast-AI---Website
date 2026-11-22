@@ -27,7 +27,7 @@ import {
   DOCUMENTATION_ENTRIES,
   EVALUATION_METRIC_CARDS,
   FAQ_ITEMS,
-  GITHUB_REPO_PLACEHOLDER,
+  GITHUB_REPO_URL,
   MODEL_COMPARISON_ROWS,
   PROBLEM_SOLUTION_STAGES,
   PROCESS_STEPS,
@@ -38,7 +38,6 @@ import { getHashForRoute, type PageRoute } from '../router';
 
 interface HomePageProps {
   onNavigate: (route: PageRoute) => void;
-  onOpenRepoModal: () => void;
 }
 
 const CAPABILITY_ICONS = [
@@ -68,7 +67,7 @@ const DOC_ICONS = [
   BookOpen,
 ];
 
-export function HomePage({ onNavigate, onOpenRepoModal }: HomePageProps) {
+export function HomePage({ onNavigate }: HomePageProps) {
   const [activePipelineIdx, setActivePipelineIdx] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
@@ -114,14 +113,15 @@ export function HomePage({ onNavigate, onOpenRepoModal }: HomePageProps) {
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </a>
 
-                <button
-                  type="button"
-                  onClick={onOpenRepoModal}
+                <a
+                  href={GITHUB_REPO_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex min-h-[46px] items-center gap-2 rounded-xl border border-neutral-300 bg-white px-6 py-2.5 text-sm font-semibold text-neutral-900 transition-colors hover:border-neutral-950 hover:bg-neutral-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 whitespace-nowrap shrink-0"
                 >
                   <Github className="h-4 w-4" aria-hidden="true" />
                   <span>View on GitHub</span>
-                </button>
+                </a>
               </div>
 
               <p className="mt-8 font-mono text-xs text-neutral-500">
@@ -560,20 +560,29 @@ export function HomePage({ onNavigate, onOpenRepoModal }: HomePageProps) {
                   YAML pipeline for your own retail, e-commerce, or academic datasets.
                 </p>
                 <p className="mt-4 font-mono text-xs text-neutral-500">
-                  Python <span aria-hidden="true">·</span> Open-Source License (MIT placeholder){' '}
-                  <span aria-hidden="true">·</span> Repo: {GITHUB_REPO_PLACEHOLDER}
+                  Python <span aria-hidden="true">·</span> Open-Source{' '}
+                  <span aria-hidden="true">·</span>{' '}
+                  <a
+                    href={GITHUB_REPO_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-neutral-300 underline-offset-4 hover:text-teal-700"
+                  >
+                    github.com/Giri-Nova/demand-forecasting-toolkit
+                  </a>
                 </p>
               </div>
 
               <div className="flex flex-wrap items-center gap-3 lg:col-span-5 lg:justify-end">
-                <button
-                  type="button"
-                  onClick={onOpenRepoModal}
+                <a
+                  href={GITHUB_REPO_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex min-h-[46px] items-center gap-2 rounded-xl bg-neutral-950 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-teal-700 whitespace-nowrap shrink-0"
                 >
                   <Github className="h-4 w-4" aria-hidden="true" />
                   <span>GitHub Repository</span>
-                </button>
+                </a>
                 <a
                   href={getHashForRoute('download')}
                   onClick={(e) => {
