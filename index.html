@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DemandCast AI – Demand Forecasting Toolkit for Sales Data</title>
+    <meta
+      name="description"
+      content="Open-source demand forecasting toolkit for CSV, Excel, and Parquet sales data. Get LightGBM forecasts, prediction intervals, and honest time-based backtests."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DemandCast AI" />
+    <meta property="og:title" content="DemandCast AI – Demand Forecasting Toolkit for Sales Data" />
+    <meta
+      property="og:description"
+      content="Open-source demand forecasting toolkit for CSV, Excel, and Parquet sales data. Get LightGBM forecasts, prediction intervals, and honest time-based backtests."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DemandCast AI – Demand Forecasting Toolkit for Sales Data" />
+    <meta
+      name="twitter:description"
+      content="Open-source demand forecasting toolkit for CSV, Excel, and Parquet sales data. Get LightGBM forecasts, prediction intervals, and honest time-based backtests."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "DemandCast AI – Demand Forecasting Toolkit",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Cross-platform (Python)",
+            "description": "Open-source demand forecasting toolkit for CSV, Excel, and Parquet sales data with LightGBM, time-based backtesting, and prediction intervals.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What file formats are supported?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "CSV, Excel (.xlsx and .xls), and Apache Parquet files."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much data do I need?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "At least 3 times the forecast horizon of historical periods per series (for example, at least 84 days for a 28-day horizon)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I forecast many products at once?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Pass one or more identifier columns to id_cols such as store and sku to train across all series together and inspect per-series metrics."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need to know machine learning?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Automatic defaults configure lags, rolling windows, LightGBM hyperparameters, and baseline comparisons from the CLI, YAML config, or Streamlit dashboard."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-white text-neutral-950 antialiased selection:bg-teal-600/15 selection:text-teal-800">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

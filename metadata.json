@@ -1,0 +1,6 @@
+{
+  "name": "DemandCast AI",
+  "description": "Demand Forecasting Toolkit: open-source demand forecasting for CSV, Excel, and Parquet sales datasets with LightGBM, time-based backtesting, and prediction intervals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
